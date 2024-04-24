@@ -1,4 +1,6 @@
-https://leetcode.com/problems/peak-index-in-a-mountain-array/
+//https://leetcode.com/problems/peak-index-in-a-mountain-array/
+//https://leetcode.com/problems/find-peak-element/submissions/1240966812/       
+// in second link, refference of array change from arr to nums
 class Solution {
     public int peakIndexInMountainArray(int[] arr) {
         int start=0;
