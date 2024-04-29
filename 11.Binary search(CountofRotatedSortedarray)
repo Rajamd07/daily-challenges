@@ -1,0 +1,55 @@
+https://www.geeksforgeeks.org/find-rotation-count-rotated-sorted-array/
+public class Hello
+{
+    public static void main(String[] args) {
+        int[] nums={15, 18, 2, 3, 6, 12};
+        System.out.println(CountofRotatedSortedarray(nums));
+    }
+    // pivot concept
+    static int CountofRotatedSortedarray(int[] arr)
+    {
+        int start=0;
+        int end=arr.length-1;
+        while(start<=end)
+        {
+            int mid=start+(end-start)/2;
+            if(arr[mid]>arr[mid+1])
+                return mid+1;      //return mid;
+            else if(arr[mid]<arr[mid -1])
+                return mid;        //return mid-1;
+            if(arr[start]<arr[mid])
+                start=mid+1;
+            else
+                end=mid-1;
+        }
+        return -1;
+    }   
+}
+
+=========================================================================================================
+public class Hello
+{
+    public static void main(String[] args) {
+        int[] nums={7, 9, 11, 12, 5};
+        System.out.println(CountofRotatedSortedarray(nums));
+    }
+    // pivot concept
+    static int CountofRotatedSortedarray(int[] arr)
+    {
+        int start=0;
+        int end=arr.length-1;
+        while(start<=end)
+        {
+            int mid=start+(end-start)/2;
+            if(arr[mid]>arr[mid+1])
+                return mid+1;      //return mid;
+            else if(arr[mid]<arr[mid -1])
+                return mid;        //return mid-1;
+            if(arr[start]<arr[mid])
+                start=mid+1;
+            else
+                end=mid-1;
+        }
+        return -1;
+    }   
+}
