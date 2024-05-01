@@ -1,0 +1,38 @@
+https://leetcode.com/problems/split-array-largest-sum/
+class Solution {
+    public int splitArray(int[] nums, int k) {
+        int start =0;
+        int end=0;
+        for(int m:nums)
+        {
+            if(m>start)
+                start=m;
+            end=end+m;
+        }
+        while(start<end)
+        {
+            int mid=start+(end-start)/2;
+
+            int sum=0;
+            int pecice=1;
+            
+            for(int num:nums)
+            {
+                if(sum+num >mid)
+                {
+                    sum=num;
+                    pecice++;
+                } else{
+                    sum+=num;
+                } 
+            }
+            if(pecice <=k)
+            {
+                end=mid;   
+            } else{
+                start=mid+1;
+            }
+        } 
+        return end;
+    }
+}
