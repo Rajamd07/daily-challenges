@@ -1,0 +1,34 @@
+https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/?envType=problem-list-v2&envId=xcrx4mxm
+class Solution {
+    public int shipWithinDays(int[] weights, int days) {
+        int start=0;
+        int end=0;
+        for(int n: weights)
+        {
+            if(n>start)
+                start=n;
+            end+=n;
+        }
+        while(start<end)
+        {
+            int mid = start + (end - start)/2;
+            int sum=0;
+            int peice=1;
+            for(int m : weights)
+            {
+                if(sum+m > mid)
+                {
+                    sum=m;
+                    peice++;
+                } else {
+                    sum+=m;
+                }
+            }
+            if(peice <= days)
+                end=mid;
+            else
+                start =mid+1;
+        } 
+        return end;
+    }
+}
