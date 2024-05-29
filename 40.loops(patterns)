@@ -1,0 +1,58 @@
+public class Hello {
+    public static void main(String[] args)
+	{
+        pattern31(7);
+        Pattern6(8);
+        pattern31(8);
+    }
+    static void pattern31(int n) 
+    {
+        int org=n;
+        n=2*n;
+        for(int i=0 ; i<=n ; i++)
+        {
+            for(int j=0 ; j<=n ; j++)
+            {
+                int min=org - Math.min(Math.min(i, j), Math.min(n-i , n-j));
+                System.out.print(min + " ");
+            }
+            System.out.println();
+        }
+    }
+    static void pattern17(int n) 
+    {
+        for (int row = 1; row <= 2 * n; row++) 
+        {
+
+            int c = row > n ? 2 * n - row: row;
+
+            for (int space = 0; space < n-c; space++) 
+            {
+                System.out.print("  ");
+            }
+
+            for (int col = c; col >= 1; col--) 
+            {
+                System.out.print(col + " ");
+            }
+            for (int col = 2; col <= c; col++) 
+            {
+                System.out.print(col + " ");
+            }
+
+            System.out.println();
+        }
+    }
+    static void Pattern6(int n)
+    {
+        for (int i = n; i >= 1; i--) {
+            for (int j = 1; j < i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j <= n - i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
