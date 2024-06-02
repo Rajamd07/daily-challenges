@@ -1,0 +1,15 @@
+https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/
+class Solution {
+    public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
+        return loop(word1).toString().equals(loop(word2).toString());
+    }
+    String loop(String[] s)
+    {
+        var sb=new StringBuilder();
+        for(String str: s)
+        {
+            sb.append(str);
+        }
+        return sb.toString();
+    }
+}
