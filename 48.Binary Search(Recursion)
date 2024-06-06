@@ -1,0 +1,33 @@
+class Solution {
+    public int search(int[] nums, int target) {
+        // int start=0;
+        // int end=nums.length-1;
+        // while(start<=end)
+        // {
+        //     int mid=start+(end-start)/2;
+        //     if(nums[mid]==target)
+        //         return mid;
+        //     else if(nums[mid]<target)
+        //         start=mid+1;
+        //     else
+        //         end=mid-1;
+        // }
+        // return -1;
+       return BS(nums, 0, nums.length-1, target);
+    }
+    int BS(int[] n, int start, int end, int target)
+    {
+        if(start<=end)
+        {
+            int mid = start+(end - start)/2;
+            if(n[mid]<target) 
+                return BS(n, mid+1 , end, target);
+            else if(n[mid]>target) 
+                return BS(n, start , mid-1, target);
+            else    
+                return mid;
+        } else {
+            return -1;
+        }
+    }
+}
